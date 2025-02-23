@@ -95,31 +95,31 @@
     <!-- Видео 1 -->
     <div class="gallery-item">
       <h3>1. Короче, открыл свой NoRules</h3>
-      <iframe id="video1" src="https://www.youtube.com/embed/sxbUWnh8Om0" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      <iframe id="video1" src="https://www.youtube.com/embed/sxbUWnh8Om0?vq=hd720" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
       <button class="fullscreen-btn" onclick="openFullscreen('video1')">На весь экран</button>
     </div>
     <!-- Видео 2 -->
     <div class="gallery-item">
       <h3>2. Гайд на Role-play</h3>
-      <iframe id="video2" src="https://www.youtube.com/embed/YsLaieo120c" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      <iframe id="video2" src="https://www.youtube.com/embed/YsLaieo120c?vq=hd720" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
       <button class="fullscreen-btn" onclick="openFullscreen('video2')">На весь экран</button>
     </div>
     <!-- Видео 3 -->
     <div class="gallery-item">
       <h3>3. Гайд для новичков</h3>
-      <iframe id="video3" src="https://www.youtube.com/embed/0yiRY1uZrQk" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      <iframe id="video3" src="https://www.youtube.com/embed/0yiRY1uZrQk?vq=hd720" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
       <button class="fullscreen-btn" onclick="openFullscreen('video3')">На весь экран</button>
     </div>
     <!-- Видео 4 -->
     <div class="gallery-item">
       <h3>4. Куда пропадают люди</h3>
-      <iframe id="video4" src="https://www.youtube.com/embed/AZq42g_nD1M" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      <iframe id="video4" src="https://www.youtube.com/embed/AZq42g_nD1M?vq=hd720" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
       <button class="fullscreen-btn" onclick="openFullscreen('video4')">На весь экран</button>
     </div>
     <!-- Видео 5 -->
     <div class="gallery-item">
       <h3>5. Просто Owel</h3>
-      <iframe id="video5" src="https://www.youtube.com/embed/7Ts6nOijBXU" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      <iframe id="video5" src="https://www.youtube.com/embed/7Ts6nOijBXU?vq=hd720" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
       <button class="fullscreen-btn" onclick="openFullscreen('video5')">На весь экран</button>
     </div>
     <!-- Фото 1 -->
@@ -158,6 +158,18 @@
       } else if (element.msRequestFullscreen) { // IE/Edge
         element.msRequestFullscreen();
       }
+
+      // Добавляем обработчик изменения ориентации
+      element.addEventListener('fullscreenchange', () => {
+        if (document.fullscreenElement) {
+          element.style.width = '100%';
+          element.style.height = '100%';
+          element.style.objectFit = 'cover';
+        } else {
+          element.style.width = '100%';
+          element.style.height = 'auto';
+        }
+      });
     }
   </script>
 </body>
