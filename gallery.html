@@ -45,7 +45,7 @@
       margin: 10px 0;
       color: #ff6f61;
     }
-    .gallery-item img, .gallery-item video {
+    .gallery-item iframe, .gallery-item img {
       width: 100%;
       border-radius: 10px;
     }
@@ -95,46 +95,31 @@
     <!-- Видео 1 -->
     <div class="gallery-item">
       <h3>1. Короче, открыл свой NoRules</h3>
-      <video controls id="video1">
-        <source src="video1.mp4" type="video/mp4">
-        Ваш браузер не поддерживает видео.
-      </video>
+      <iframe id="video1" src="https://www.youtube.com/embed/sxbUWnh8Om0" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
       <button class="fullscreen-btn" onclick="openFullscreen('video1')">На весь экран</button>
     </div>
     <!-- Видео 2 -->
     <div class="gallery-item">
       <h3>2. Гайд на Role-play</h3>
-      <video controls id="video2">
-        <source src="video2.mp4" type="video/mp4">
-        Ваш браузер не поддерживает видео.
-      </video>
+      <iframe id="video2" src="https://www.youtube.com/embed/YsLaieo120c" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
       <button class="fullscreen-btn" onclick="openFullscreen('video2')">На весь экран</button>
     </div>
     <!-- Видео 3 -->
     <div class="gallery-item">
       <h3>3. Гайд для новичков</h3>
-      <video controls id="video3">
-        <source src="video3.mp4" type="video/mp4">
-        Ваш браузер не поддерживает видео.
-      </video>
+      <iframe id="video3" src="https://www.youtube.com/embed/0yiRY1uZrQk" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
       <button class="fullscreen-btn" onclick="openFullscreen('video3')">На весь экран</button>
     </div>
     <!-- Видео 4 -->
     <div class="gallery-item">
       <h3>4. Куда пропадают люди</h3>
-      <video controls id="video4">
-        <source src="video4.mp4" type="video/mp4">
-        Ваш браузер не поддерживает видео.
-      </video>
+      <iframe id="video4" src="https://www.youtube.com/embed/AZq42g_nD1M" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
       <button class="fullscreen-btn" onclick="openFullscreen('video4')">На весь экран</button>
     </div>
     <!-- Видео 5 -->
     <div class="gallery-item">
       <h3>5. Просто Owel</h3>
-      <video controls id="video5">
-        <source src="video5.mp4" type="video/mp4">
-        Ваш браузер не поддерживает видео.
-      </video>
+      <iframe id="video5" src="https://www.youtube.com/embed/7Ts6nOijBXU" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
       <button class="fullscreen-btn" onclick="openFullscreen('video5')">На весь экран</button>
     </div>
     <!-- Фото 1 -->
@@ -162,16 +147,16 @@
 
   <script>
     // Функция для открытия видео на весь экран
-    function openFullscreen(videoId) {
-      const videoElement = document.getElementById(videoId);
-      if (videoElement.requestFullscreen) {
-        videoElement.requestFullscreen();
-      } else if (videoElement.mozRequestFullScreen) { // Firefox
-        videoElement.mozRequestFullScreen();
-      } else if (videoElement.webkitRequestFullscreen) { // Chrome, Safari, Opera
-        videoElement.webkitRequestFullscreen();
-      } else if (videoElement.msRequestFullscreen) { // IE/Edge
-        videoElement.msRequestFullscreen();
+    function openFullscreen(elementId) {
+      const element = document.getElementById(elementId);
+      if (element.requestFullscreen) {
+        element.requestFullscreen();
+      } else if (element.mozRequestFullScreen) { // Firefox
+        element.mozRequestFullScreen();
+      } else if (element.webkitRequestFullscreen) { // Chrome, Safari, Opera
+        element.webkitRequestFullscreen();
+      } else if (element.msRequestFullscreen) { // IE/Edge
+        element.msRequestFullscreen();
       }
     }
   </script>
