@@ -1,89 +1,1011 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Kaboom-Project | Завершение</title>
-  <style>
-    /* Основные стили */
-    body {
-      font-family: 'Arial', sans-serif;
-      background: #000;
-      color: #fff;
-      margin: 0;
-      padding: 0;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
-      text-align: center;
-      overflow: hidden;
-    }
-    h1 {
-      font-size: 3rem;
-      text-transform: uppercase;
-      background: linear-gradient(90deg, #ff0000, #ff6f61);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      animation: fadeIn 2s ease-in-out, glow 2s infinite alternate;
-    }
-    p {
-      font-size: 1.2rem;
-      color: #ccc;
-      animation: fadeIn 3s ease-in-out;
-    }
-    .btn {
-      display: inline-block;
-      margin: 15px;
-      padding: 12px 24px;
-      background: #ff0000;
-      color: #fff;
-      text-decoration: none;
-      border-radius: 25px;
-      font-weight: bold;
-      text-transform: uppercase;
-      transition: all 0.3s ease;
-      box-shadow: 0 0 10px rgba(255, 0, 0, 0.5);
-    }
-    .btn:hover {
-      background: #ff3b2f;
-      transform: scale(1.1);
-      box-shadow: 0 0 20px rgba(255, 0, 0, 0.8);
-    }
-    /* Анимации */
-    @keyframes fadeIn {
-      from { opacity: 0; }
-      to { opacity: 1; }
-    }
-    @keyframes glow {
-      0% { text-shadow: 0 0 5px rgba(255, 0, 0, 0.5); }
-      100% { text-shadow: 0 0 20px rgba(255, 0, 0, 0.9); }
-    }
-    /* Фоновые эффекты */
-    body::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: radial-gradient(circle, rgba(255, 0, 0, 0.1), rgba(0, 0, 0, 0.8));
-      z-index: -1;
-      animation: pulse 5s infinite alternate;
-    }
-    @keyframes pulse {
-      0% { transform: scale(1); opacity: 0.5; }
-      100% { transform: scale(1.2); opacity: 1; }
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Илья Мисюров - Гений, Красавчик, Легенда</title>
+    <style>
+        :root {
+            --primary: #ff6b6b;
+            --secondary: #4ecdc4;
+            --dark: #292f36;
+            --light: #f7fff7;
+            --accent: #ffd166;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: var(--light);
+            color: var(--dark);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+        
+        header {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: white;
+            text-align: center;
+            padding: 3rem 1rem;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+        
+        header::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('images/photo1.png') center/cover;
+            opacity: 0.2;
+            z-index: 0;
+        }
+        
+        header > * {
+            position: relative;
+            z-index: 1;
+        }
+        
+        .hero-img {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 5px solid white;
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+            margin-bottom: 1.5rem;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        
+        .hero-img:hover {
+            transform: scale(1.05) rotate(5deg);
+            box-shadow: 0 12px 28px rgba(0, 0, 0, 0.3);
+        }
+        
+        h1 {
+            font-size: 3rem;
+            margin-bottom: 0.5rem;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+        
+        .tagline {
+            font-size: 1.5rem;
+            font-weight: 300;
+            margin-bottom: 1.5rem;
+        }
+        
+        .tags {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 0.8rem;
+            margin-top: 1rem;
+        }
+        
+        .tag {
+            background-color: rgba(255, 255, 255, 0.2);
+            padding: 0.5rem 1rem;
+            border-radius: 50px;
+            font-size: 0.9rem;
+            backdrop-filter: blur(5px);
+            transition: all 0.3s;
+        }
+        
+        .tag:hover {
+            background-color: rgba(255, 255, 255, 0.3);
+            transform: translateY(-3px);
+        }
+        
+        nav {
+            background-color: var(--dark);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 1rem;
+        }
+        
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 1.5rem;
+        }
+        
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+            position: relative;
+        }
+        
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background-color: var(--accent);
+            transition: width 0.3s;
+        }
+        
+        .nav-links a:hover {
+            color: var(--accent);
+        }
+        
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+        
+        .hamburger {
+            display: none;
+            cursor: pointer;
+            background: none;
+            border: none;
+            color: white;
+            font-size: 1.5rem;
+        }
+        
+        section {
+            padding: 4rem 1rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 3rem;
+            position: relative;
+            font-size: 2.2rem;
+            color: var(--dark);
+        }
+        
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background: linear-gradient(to right, var(--primary), var(--secondary));
+            border-radius: 2px;
+        }
+        
+        .about-content {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2rem;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .about-text {
+            flex: 1;
+            min-width: 300px;
+        }
+        
+        .about-img {
+            flex: 1;
+            min-width: 300px;
+            max-width: 500px;
+            border-radius: 10px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s;
+        }
+        
+        .about-img:hover {
+            transform: scale(1.02) rotate(-1deg);
+        }
+        
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+        
+        .gallery-item {
+            position: relative;
+            overflow: hidden;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+            aspect-ratio: 16/9;
+        }
+        
+        .gallery-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+        }
+        
+        .gallery-item img, .gallery-item video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s;
+        }
+        
+        .gallery-item:hover img, .gallery-item:hover video {
+            transform: scale(1.1);
+        }
+        
+        .gallery-item-caption {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent);
+            color: white;
+            padding: 1rem;
+            transform: translateY(100%);
+            transition: transform 0.3s;
+        }
+        
+        .gallery-item:hover .gallery-item-caption {
+            transform: translateY(0);
+        }
+        
+        .media-filter {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-bottom: 2rem;
+            flex-wrap: wrap;
+        }
+        
+        .filter-btn {
+            padding: 0.5rem 1.5rem;
+            border: none;
+            background-color: var(--dark);
+            color: white;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        
+        .filter-btn:hover, .filter-btn.active {
+            background-color: var(--primary);
+            transform: translateY(-2px);
+        }
+        
+        .achievements {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+        
+        .achievement-card {
+            background-color: white;
+            border-radius: 10px;
+            padding: 1.5rem;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s, box-shadow 0.3s;
+            text-align: center;
+        }
+        
+        .achievement-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+        
+        .achievement-icon {
+            font-size: 2.5rem;
+            color: var(--primary);
+            margin-bottom: 1rem;
+        }
+        
+        .achievement-title {
+            font-size: 1.2rem;
+            margin-bottom: 0.5rem;
+            color: var(--dark);
+        }
+        
+        .contact-form {
+            max-width: 600px;
+            margin: 0 auto;
+            background-color: white;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        }
+        
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+        }
+        
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 0.8rem;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 1rem;
+            transition: border-color 0.3s, box-shadow 0.3s;
+        }
+        
+        .form-group input:focus,
+        .form-group textarea:focus {
+            border-color: var(--primary);
+            outline: none;
+            box-shadow: 0 0 0 3px rgba(255, 107, 107, 0.2);
+        }
+        
+        .form-group textarea {
+            min-height: 150px;
+            resize: vertical;
+        }
+        
+        .submit-btn {
+            background: linear-gradient(to right, var(--primary), var(--secondary));
+            color: white;
+            border: none;
+            padding: 0.8rem 2rem;
+            font-size: 1rem;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: transform 0.3s, box-shadow 0.3s;
+            display: block;
+            margin: 0 auto;
+        }
+        
+        .submit-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        footer {
+            background-color: var(--dark);
+            color: white;
+            text-align: center;
+            padding: 2rem 1rem;
+            margin-top: 3rem;
+        }
+        
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            margin: 1.5rem 0;
+        }
+        
+        .social-link {
+            color: white;
+            font-size: 1.5rem;
+            transition: color 0.3s, transform 0.3s;
+        }
+        
+        .social-link:hover {
+            color: var(--accent);
+            transform: translateY(-3px);
+        }
+        
+        .back-to-top {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            background-color: var(--primary);
+            color: white;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            font-size: 1.5rem;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s;
+            z-index: 99;
+        }
+        
+        .back-to-top.visible {
+            opacity: 1;
+            visibility: visible;
+        }
+        
+        .back-to-top:hover {
+            background-color: var(--secondary);
+            transform: translateY(-3px);
+        }
+        
+        @media (max-width: 768px) {
+            .nav-links {
+                position: fixed;
+                top: 70px;
+                left: 0;
+                right: 0;
+                background-color: var(--dark);
+                flex-direction: column;
+                align-items: center;
+                padding: 1rem 0;
+                gap: 1rem;
+                clip-path: circle(0px at 90% -10%);
+                transition: clip-path 0.5s ease-in-out;
+                pointer-events: none;
+            }
+            
+            .nav-links.active {
+                clip-path: circle(1000px at 90% -10%);
+                pointer-events: all;
+            }
+            
+            .hamburger {
+                display: block;
+            }
+            
+            h1 {
+                font-size: 2.2rem;
+            }
+            
+            .tagline {
+                font-size: 1.2rem;
+            }
+            
+            .section-title {
+                font-size: 1.8rem;
+            }
+        }
+        
+        /* Анимации */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .fade-in {
+            animation: fadeIn 0.8s ease-out forwards;
+        }
+        
+        .delay-1 { animation-delay: 0.2s; }
+        .delay-2 { animation-delay: 0.4s; }
+        .delay-3 { animation-delay: 0.6s; }
+        .delay-4 { animation-delay: 0.8s; }
+        
+        /* Аудио плеер */
+        .audio-player {
+            width: 100%;
+            background-color: white;
+            border-radius: 10px;
+            padding: 1rem;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            margin-top: 1rem;
+        }
+        
+        .audio-info {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 1rem;
+        }
+        
+        .audio-cover {
+            width: 60px;
+            height: 60px;
+            border-radius: 5px;
+            object-fit: cover;
+        }
+        
+        .audio-title {
+            font-weight: 500;
+            margin-bottom: 0.2rem;
+        }
+        
+        .audio-artist {
+            font-size: 0.9rem;
+            color: #666;
+        }
+        
+        .audio-controls {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+        
+        .play-btn {
+            background-color: var(--primary);
+            color: white;
+            border: none;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: transform 0.3s;
+        }
+        
+        .play-btn:hover {
+            transform: scale(1.1);
+        }
+        
+        .progress-container {
+            flex: 1;
+            height: 6px;
+            background-color: #eee;
+            border-radius: 3px;
+            cursor: pointer;
+        }
+        
+        .progress-bar {
+            height: 100%;
+            background: linear-gradient(to right, var(--primary), var(--secondary));
+            border-radius: 3px;
+            width: 0%;
+            position: relative;
+        }
+        
+        .progress-bar::after {
+            content: '';
+            position: absolute;
+            right: -5px;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 10px;
+            height: 10px;
+            background-color: var(--primary);
+            border-radius: 50%;
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+        
+        .progress-container:hover .progress-bar::after {
+            opacity: 1;
+        }
+        
+        .time {
+            font-size: 0.8rem;
+            color: #666;
+            min-width: 40px;
+            text-align: center;
+        }
+        
+        /* Модальное окно */
+        .modal {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: rgba(0, 0, 0, 0.8);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 1000;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.3s, visibility 0.3s;
+        }
+        
+        .modal.active {
+            opacity: 1;
+            visibility: visible;
+        }
+        
+        .modal-content {
+            max-width: 90%;
+            max-height: 90%;
+            position: relative;
+        }
+        
+        .modal-content img, .modal-content video {
+            max-width: 100%;
+            max-height: 80vh;
+            border-radius: 10px;
+            display: block;
+        }
+        
+        .close-modal {
+            position: absolute;
+            top: -40px;
+            right: 0;
+            color: white;
+            font-size: 2rem;
+            cursor: pointer;
+            background: none;
+            border: none;
+        }
+        
+        .modal-caption {
+            color: white;
+            text-align: center;
+            margin-top: 1rem;
+        }
+    </style>
 </head>
 <body>
-  <div>
-    <h1>Спасибо за всё!</h1>
-    <p>Проект Kaboom-Project завершает свою работу. Мы благодарим всех, кто был с нами.</p>
-    <a href="gallery.html" class="btn">Галерея</a>
-    <a href="history.html" class="btn">История</a>
-    <a href="contacts.html" class="btn">Контакты</a>
-  </div>
+    <header>
+        <img src="images/photo1.png" alt="Илья Мисюров" class="hero-img">
+        <h1 class="fade-in">Илья Мисюров</h1>
+        <p class="tagline fade-in delay-1">Гений, Красавчик, Легенда</p>
+        <div class="tags fade-in delay-2">
+            <span class="tag">Умный</span>
+            <span class="tag">Талантливый</span>
+            <span class="tag">Красивый</span>
+            <span class="tag">Гей</span>
+            <span class="tag">Крутой</span>
+            <span class="tag">Гениальный</span>
+        </div>
+    </header>
+    
+    <nav>
+        <div class="nav-container">
+            <button class="hamburger">☰</button>
+            <ul class="nav-links">
+                <li><a href="#about" class="nav-link">Обо мне</a></li>
+                <li><a href="#gallery" class="nav-link">Галерея</a></li>
+                <li><a href="#achievements" class="nav-link">Достижения</a></li>
+                <li><a href="#contact" class="nav-link">Контакты</a></li>
+            </ul>
+        </div>
+    </nav>
+    
+    <section id="about">
+        <h2 class="section-title fade-in">Обо мне</h2>
+        <div class="about-content">
+            <div class="about-text fade-in delay-1">
+                <p>Привет! Я Илья Мисюров - человек-легенда, сочетающий в себе невероятный ум, потрясающую внешность и харизму, которая покоряет сердца.</p>
+                <p>Моя жизнь - это постоянное движение вперед, к новым вершинам и достижениям. Я не просто гей - я эталон стиля, интеллекта и обаяния.</p>
+                <p>Мои увлечения разнообразны: от высоких технологий до искусства, от спорта до философии. Я верю, что нет пределов совершенству, и каждый день доказываю это своим примером.</p>
+                <p>Этот сайт - лишь маленькая часть того, кто я есть. Добро пожаловать в мой мир!</p>
+            </div>
+            <img src="images/photo2.png" alt="Илья Мисюров" class="about-img fade-in delay-2">
+        </div>
+    </section>
+    
+    <section id="gallery">
+        <h2 class="section-title fade-in">Медиа</h2>
+        <div class="media-filter fade-in delay-1">
+            <button class="filter-btn active" data-filter="all">Все</button>
+            <button class="filter-btn" data-filter="photo">Фото</button>
+            <button class="filter-btn" data-filter="video">Видео</button>
+            <button class="filter-btn" data-filter="audio">Аудио</button>
+        </div>
+        
+        <div class="gallery fade-in delay-2">
+            <!-- Фото -->
+            <div class="gallery-item photo" data-type="photo">
+                <img src="images/photo1.png" alt="Илья Мисюров 1">
+                <div class="gallery-item-caption">Илья в своем лучшем образе</div>
+            </div>
+            
+            <div class="gallery-item photo" data-type="photo">
+                <img src="images/photo2.png" alt="Илья Мисюров 2">
+                <div class="gallery-item-caption">Момент вдохновения</div>
+            </div>
+            
+            <div class="gallery-item photo" data-type="photo">
+                <img src="images/photo3.png" alt="Илья Мисюров 3">
+                <div class="gallery-item-caption">Стиль и элегантность</div>
+            </div>
+            
+            <!-- Видео -->
+            <div class="gallery-item video" data-type="video">
+                <video poster="images/video-poster1.png">
+                    <source src="videos/video1.mp4" type="video/mp4">
+                </video>
+                <div class="gallery-item-caption">Илья в действии</div>
+            </div>
+            
+            <div class="gallery-item video" data-type="video">
+                <video poster="images/video-poster2.png">
+                    <source src="videos/video2.mp4" type="video/mp4">
+                </video>
+                <div class="gallery-item-caption">Выступление</div>
+            </div>
+            
+            <!-- Аудио -->
+            <div class="gallery-item audio" data-type="audio">
+                <div class="audio-player">
+                    <div class="audio-info">
+                        <img src="images/audio-cover1.png" alt="Обложка" class="audio-cover">
+                        <div>
+                            <div class="audio-title">Мой голос</div>
+                            <div class="audio-artist">Илья Мисюров</div>
+                        </div>
+                    </div>
+                    <audio src="audio/audio1.mp3"></audio>
+                    <div class="audio-controls">
+                        <button class="play-btn">▶</button>
+                        <div class="progress-container">
+                            <div class="progress-bar"></div>
+                        </div>
+                        <div class="time">0:00</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section id="achievements">
+        <h2 class="section-title fade-in">Мои достижения</h2>
+        <div class="achievements">
+            <div class="achievement-card fade-in delay-1">
+                <div class="achievement-icon">🏆</div>
+                <h3 class="achievement-title">Гениальность</h3>
+                <p>Доказанный уровень IQ за пределами обычных измерений. Способен решать любые задачи быстрее всех.</p>
+            </div>
+            
+            <div class="achievement-card fade-in delay-2">
+                <div class="achievement-icon">💖</div>
+                <h3 class="achievement-title">Красота</h3>
+                <p>Обладатель идеальных черт лица и тела. Неоднократно признавался самым красивым человеком года.</p>
+            </div>
+            
+            <div class="achievement-card fade-in delay-3">
+                <div class="achievement-icon">🌈</div>
+                <h3 class="achievement-title">Гей-икона</h3>
+                <p>Символ гордости и уверенности. Вдохновляю миллионы людей быть собой.</p>
+            </div>
+            
+            <div class="achievement-card fade-in delay-4">
+                <div class="achievement-icon">🌟</div>
+                <h3 class="achievement-title">Таланты</h3>
+                <p>Владею 10+ языками, играю на 5 музыкальных инструментах, пишу картины и книги.</p>
+            </div>
+        </div>
+    </section>
+    
+    <section id="contact">
+        <h2 class="section-title fade-in">Связь со мной</h2>
+        <div class="contact-form fade-in delay-1">
+            <form id="contactForm">
+                <div class="form-group">
+                    <label for="name">Ваше имя</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="email">Ваш email</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="message">Ваше сообщение</label>
+                    <textarea id="message" name="message" required></textarea>
+                </div>
+                
+                <button type="submit" class="submit-btn">Отправить</button>
+            </form>
+        </div>
+    </section>
+    
+    <footer>
+        <div class="social-links">
+            <a href="#" class="social-link">📱</a>
+            <a href="#" class="social-link">📘</a>
+            <a href="#" class="social-link">📸</a>
+            <a href="#" class="social-link">🐦</a>
+            <a href="#" class="social-link">🎬</a>
+        </div>
+        <p>© 2023 Илья Мисюров. Все права защищены.</p>
+        <p>Сайт создан с любовью и обожанием</p>
+    </footer>
+    
+    <a href="#" class="back-to-top">↑</a>
+    
+    <!-- Модальное окно для медиа -->
+    <div class="modal" id="mediaModal">
+        <button class="close-modal">×</button>
+        <div class="modal-content">
+            <img id="modalImage" src="" alt="">
+            <video id="modalVideo" controls></video>
+            <p class="modal-caption" id="modalCaption"></p>
+        </div>
+    </div>
+    
+    <script>
+        // Мобильное меню
+        const hamburger = document.querySelector('.hamburger');
+        const navLinks = document.querySelector('.nav-links');
+        
+        hamburger.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+        });
+        
+        // Плавная прокрутка
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                if (this.classList.contains('nav-link')) {
+                    navLinks.classList.remove('active');
+                }
+                
+                const targetId = this.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
+                
+                window.scrollTo({
+                    top: targetElement.offsetTop - 70,
+                    behavior: 'smooth'
+                });
+            });
+        });
+        
+        // Кнопка "Наверх"
+        const backToTop = document.querySelector('.back-to-top');
+        
+        window.addEventListener('scroll', () => {
+            if (window.pageYOffset > 300) {
+                backToTop.classList.add('visible');
+            } else {
+                backToTop.classList.remove('visible');
+            }
+        });
+        
+        // Фильтрация галереи
+        const filterButtons = document.querySelectorAll('.filter-btn');
+        const galleryItems = document.querySelectorAll('.gallery-item');
+        
+        filterButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                // Удаляем активный класс у всех кнопок
+                filterButtons.forEach(btn => btn.classList.remove('active'));
+                // Добавляем активный класс текущей кнопке
+                button.classList.add('active');
+                
+                const filter = button.dataset.filter;
+                
+                galleryItems.forEach(item => {
+                    if (filter === 'all' || item.dataset.type === filter) {
+                        item.style.display = 'block';
+                    } else {
+                        item.style.display = 'none';
+                    }
+                });
+            });
+        });
+        
+        // Аудио плеер
+        const audioPlayers = document.querySelectorAll('.audio-player');
+        
+        audioPlayers.forEach(player => {
+            const audio = player.querySelector('audio');
+            const playBtn = player.querySelector('.play-btn');
+            const progressBar = player.querySelector('.progress-bar');
+            const timeDisplay = player.querySelector('.time');
+            
+            let isPlaying = false;
+            
+            playBtn.addEventListener('click', () => {
+                if (isPlaying) {
+                    audio.pause();
+                    playBtn.textContent = '▶';
+                } else {
+                    audio.play();
+                    playBtn.textContent = '❚❚';
+                }
+                isPlaying = !isPlaying;
+            });
+            
+            audio.addEventListener('timeupdate', () => {
+                const currentTime = audio.currentTime;
+                const duration = audio.duration;
+                const progressPercent = (currentTime / duration) * 100;
+                progressBar.style.width = `${progressPercent}%`;
+                
+                // Форматирование времени
+                const currentMinutes = Math.floor(currentTime / 60);
+                const currentSeconds = Math.floor(currentTime % 60).toString().padStart(2, '0');
+                timeDisplay.textContent = `${currentMinutes}:${currentSeconds}`;
+            });
+            
+            progressBar.parentElement.addEventListener('click', (e) => {
+                const progressContainer = e.currentTarget;
+                const width = progressContainer.clientWidth;
+                const clickX = e.offsetX;
+                const duration = audio.duration;
+                
+                audio.currentTime = (clickX / width) * duration;
+            });
+            
+            audio.addEventListener('ended', () => {
+                playBtn.textContent = '▶';
+                progressBar.style.width = '0%';
+                timeDisplay.textContent = '0:00';
+                isPlaying = false;
+            });
+        });
+        
+        // Модальное окно для галереи
+        const modal = document.getElementById('mediaModal');
+        const modalImage = document.getElementById('modalImage');
+        const modalVideo = document.getElementById('modalVideo');
+        const modalCaption = document.getElementById('modalCaption');
+        const closeModal = document.querySelector('.close-modal');
+        
+        document.querySelectorAll('.gallery-item').forEach(item => {
+            item.addEventListener('click', () => {
+                const type = item.dataset.type;
+                const caption = item.querySelector('.gallery-item-caption').textContent;
+                
+                if (type === 'photo') {
+                    const imgSrc = item.querySelector('img').src;
+                    modalImage.src = imgSrc;
+                    modalImage.style.display = 'block';
+                    modalVideo.style.display = 'none';
+                } else if (type === 'video') {
+                    const video = item.querySelector('video');
+                    const videoSrc = video.querySelector('source').src;
+                    modalVideo.src = videoSrc;
+                    modalVideo.style.display = 'block';
+                    modalImage.style.display = 'none';
+                }
+                
+                modalCaption.textContent = caption;
+                modal.classList.add('active');
+                document.body.style.overflow = 'hidden';
+            });
+        });
+        
+        closeModal.addEventListener('click', () => {
+            modal.classList.remove('active');
+            document.body.style.overflow = 'auto';
+            modalVideo.pause();
+        });
+        
+        modal.addEventListener('click', (e) => {
+            if (e.target === modal) {
+                modal.classList.remove('active');
+                document.body.style.overflow = 'auto';
+                modalVideo.pause();
+            }
+        });
+        
+        // Анимация при скролле
+        const animateOnScroll = () => {
+            const elements = document.querySelectorAll('.fade-in:not(.animated)');
+            
+            elements.forEach(element => {
+                const elementTop = element.getBoundingClientRect().top;
+                const windowHeight = window.innerHeight;
+                
+                if (elementTop < windowHeight - 100) {
+                    element.classList.add('animated');
+                }
+            });
+        };
+        
+        window.addEventListener('scroll', animateOnScroll);
+        animateOnScroll(); // Инициализация при загрузке
+        
+        // Форма обратной связи
+        const contactForm = document.getElementById('contactForm');
+        
+        contactForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            
+            // Здесь можно добавить отправку формы
+            alert('Спасибо за ваше сообщение! Илья обязательно с вами свяжется.');
+            contactForm.reset();
+        });
+    </script>
 </body>
 </html>
